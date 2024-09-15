@@ -34,8 +34,15 @@ namespace MultiShop.Catalog.Services.ProductServices
             return _mapper.Map<GetByIdProductDto>(values);
         }
 
-
-
+        public async Task<List<ResultProductWithCategoryDto>> GetProductWithCategoryAsync()
+        {
+            var values = await _productCollection.Find(x=>true).ToListAsync();
+            foreach(var item in values)
+            {
+                item.Category = await _categoryCollection.Find(x => x.CategoryID==item.CategoryID).FirstAsync();
+            }
+            return _mapper.Map<List<ResultProductWithCategoryDto>>(values);
+        }
 
         public async Task<List<ResultProductDto>> GettAllProductAsync()
         {
