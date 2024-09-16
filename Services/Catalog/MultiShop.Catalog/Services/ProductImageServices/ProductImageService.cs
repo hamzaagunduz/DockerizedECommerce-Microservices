@@ -51,5 +51,6 @@ namespace MultiShop.Catalog.Services.ProductImageServices
             var values = _mapper.Map<ProductImage>(updateProductImageDto);
             await _ProductImageCollection.FindOneAndReplaceAsync(x => x.ProductImageID == updateProductImageDto.ProductImageID, values);
         }
+
     }
 }
