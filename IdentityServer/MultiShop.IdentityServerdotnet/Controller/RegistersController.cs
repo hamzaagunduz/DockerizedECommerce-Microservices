@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.IdentityServerdotnet.Dtos;
@@ -9,6 +10,7 @@ namespace MultiShop.IdentityServerdotnet.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class RegistersController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
