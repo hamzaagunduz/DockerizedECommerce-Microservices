@@ -27,7 +27,7 @@ namespace MultiShop.WebUI.Services.CatalogServices.CategoryServices
             return values;
         }
 
-        public async Task<List<ResultCategoryDto>> GettAllCategoryAsync()
+        public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
         {
             var responseMessage = await _httpClient.GetAsync("categories");
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
