@@ -30,8 +30,10 @@ namespace MultiShop.WebUI.Handler
 
                 if (tokenResponse != null)
                 {
+
                     request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                     response = await base.SendAsync(request, cancellationToken);
+
                 }
             }
 

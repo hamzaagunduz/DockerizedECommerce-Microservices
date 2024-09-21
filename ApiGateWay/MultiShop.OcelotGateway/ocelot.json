@@ -93,9 +93,7 @@
         "AllowedScopes": [ "BasketFullPermission" ]
       }
     },
-
     //Comment Mikroservis
-
     {
       "DownstreamPathTemplate": "/api/{everything}",
       "DownstreamScheme": "http",
@@ -112,6 +110,7 @@
         "AuthenticationProviderKey": "OcelotAuthenticationScheme",
         "AllowedScopes": [ "CommentFullPermission" ]
       }
+
     }
 
 
