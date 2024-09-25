@@ -1,6 +1,5 @@
 # ECommerce Microservices
 
-![ECommerce Microservices](https://via.placeholder.com/1200x400?text=ECommerce+Microservices)
 
 ## Proje Hakkında
 
