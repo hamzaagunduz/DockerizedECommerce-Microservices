@@ -8,7 +8,7 @@ using MultiShop.Order.Application.Features.CQRS.Queries.OrderDetailQuries;
 
 namespace MultiShop.Order.WebApi.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
 
     [Route("api/[controller]")]
     [ApiController]

@@ -7,7 +7,7 @@ using MultiShop.Order.Application.Features.Mediator.Queries.OrderingQueries;
 
 namespace MultiShop.Order.WebApi.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
 
     [Route("api/[controller]")]
     [ApiController]
@@ -51,6 +51,13 @@ namespace MultiShop.Order.WebApi.Controllers
         {
             await _mediator.Send(command);
             return Ok("Sipariş başarıyla güncellendi");
+        }
+
+        [HttpGet("GetOrderingByUserId/{id}")]
+        public async Task<IActionResult> GetOrderingByUserId(string id)
+        {
+            var values = await _mediator.Send(new GetOrderingByUserIdQuery(id));
+            return Ok(values);
         }
 
     }
